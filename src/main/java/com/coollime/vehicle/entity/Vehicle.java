@@ -1,19 +1,31 @@
 package com.coollime.vehicle.entity;
 
+import org.hibernate.validator.constraints.Range;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Vehicle {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
+
+  @Column(nullable = false)
+  @Range(min = 1950, max = 2050)
   private int year;
+
+  @Column(nullable = false)
   private String make;
+
+  @Column(nullable = false)
   private String model;
+
+  public Vehicle() {
+
+  }
 
   /**
    * Construct a Vehicle object using builder

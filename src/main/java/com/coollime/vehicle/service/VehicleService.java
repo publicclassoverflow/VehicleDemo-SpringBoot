@@ -19,7 +19,7 @@ public interface VehicleService {
    * @param id The id of the querying vehicle
    * @return The vehicle with the specific id
    */
-  public Vehicle getVehicle(int id);
+  public Vehicle getVehicleById(int id);
 
   /**
    * Insert a vehicle into the table
@@ -27,7 +27,7 @@ public interface VehicleService {
    * @param vehicle The vehicle entity to be inserted
    * @return Whether the insertion is successful
    */
-  public boolean addVehicle(Vehicle vehicle);
+  public boolean saveVehicle(Vehicle vehicle);
 
   /**
    * Update an existing vehicle
