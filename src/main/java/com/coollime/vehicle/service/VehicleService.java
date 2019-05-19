@@ -25,23 +25,21 @@ public interface VehicleService {
    * Insert a vehicle into the table
    *
    * @param vehicle The vehicle entity to be inserted
-   * @return Whether the insertion is successful
+   * @return The vehicle object that gets saved successfully
    */
-  public boolean saveVehicle(Vehicle vehicle);
+  public Vehicle saveVehicle(Vehicle vehicle);
 
   /**
    * Update an existing vehicle
    *
    * @param vehicle The vehicle with updated information
-   * @return Whether the update is successful
    */
-  public boolean updateVehicle(Vehicle vehicle);
+  public void updateVehicle(Vehicle vehicle);
 
   /**
    * Delete a vehicle from the table
    *
    * @param id The id of the vehicle to be deleted
-   * @return Whether the deletion is successful
    */
-  public boolean deleteVehicle(int id);
+  public void deleteVehicle(int id);
 }

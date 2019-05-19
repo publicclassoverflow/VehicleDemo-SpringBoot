@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VehicleServiceImpl implements VehicleService {
@@ -15,29 +16,28 @@ public class VehicleServiceImpl implements VehicleService {
 
   @Override
   public List<Vehicle> getAllVehicles() {
-    List<Vehicle> allVehicles = vehicleRepository.findAll();
-
-    return allVehicles;
+    return vehicleRepository.findAll();
   }
 
   @Override
   public Vehicle getVehicleById(int id) {
-    return null;
+    return vehicleRepository.findById(id).orElse(null);
   }
 
   @Override
-  public boolean saveVehicle(Vehicle vehicle) {
-    return false;
+  public Vehicle saveVehicle(Vehicle vehicle) {
+    return vehicleRepository.save(vehicle);
   }
 
   @Override
-  public boolean updateVehicle(Vehicle vehicle) {
-    return false;
+  public void updateVehicle(Vehicle vehicle) {
+    vehicleRepository.updateVehicle(vehicle.getId(), vehicle.getYear(), vehicle.getMake(),
+        vehicle.getModel());
   }
 
   @Override
-  public boolean deleteVehicle(int id) {
-    return false;
+  public void deleteVehicle(int id) {
+    vehicleRepository.deleteById(id);
   }
 
   @Autowired

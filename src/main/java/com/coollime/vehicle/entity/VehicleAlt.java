@@ -2,10 +2,12 @@ package com.coollime.vehicle.entity;
 
 import org.hibernate.validator.constraints.Range;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
-public class Vehicle {
+public class VehicleAlt {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +23,7 @@ public class Vehicle {
   @Column(nullable = false)
   private String model;
 
-  public Vehicle() {
+  public VehicleAlt() {
 
   }
 
@@ -31,7 +33,7 @@ public class Vehicle {
    * the builder pattern will handle it well
    * @param builder The VehicleBuilder instance to build the Vehicle
    */
-  private Vehicle(VehicleBuilder builder) {
+  private VehicleAlt(VehicleBuilder builder) {
     this.id = builder.id;
     this.year = builder.year;
     this.make = builder.make;
@@ -71,29 +73,24 @@ public class Vehicle {
     private String make;
     private String model;
 
-    public VehicleBuilder setId(int id) {
+    public void setId(int id) {
       this.id = id;
-      return this;
     }
 
-    public VehicleBuilder setYear(int year) {
+    public void setYear(int year) {
       this.year = year;
-      return this;
     }
 
-    public VehicleBuilder setMake(String make) {
+    public void setMake(String make) {
       this.make = make;
-      return this;
     }
 
-    public VehicleBuilder setModel(String model) {
+    public void setModel(String model) {
       this.model = model;
-      return this;
     }
 
-    public Vehicle build() {
-      return new Vehicle(this);
+    public VehicleAlt build() {
+      return new VehicleAlt(this);
     }
   }
-
 }
