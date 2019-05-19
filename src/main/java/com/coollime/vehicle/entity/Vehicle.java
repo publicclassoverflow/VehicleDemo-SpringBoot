@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Range;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "vehicle")
 public class Vehicle {
 
   @Id
