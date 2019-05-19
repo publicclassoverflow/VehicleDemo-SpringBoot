@@ -29,6 +29,7 @@ public class Vehicle {
    * Construct a Vehicle object using builder
    * This may look unnecessary, but when the Vehicle class evolves in the future,
    * the builder pattern will handle it well
+   *
    * @param builder The VehicleBuilder instance to build the Vehicle
    */
   private Vehicle(VehicleBuilder builder) {
@@ -42,15 +43,6 @@ public class Vehicle {
     return id;
   }
 
-  /**
-   * When database generates an id after successful insertion, the vehicle object needs to
-   * be updated with the id
-   * @param id The auto-generated id after database insertion
-   */
-  public void setId(int id) {
-    this.id = id;
-  }
-
   public int getYear() {
     return year;
   }
@@ -58,6 +50,7 @@ public class Vehicle {
   public String getMake() {
     return make;
   }
+
   public String getModel() {
     return model;
   }
