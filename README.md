@@ -1,5 +1,11 @@
 # Vehicle Entity RESTful Web Service Demo
 
+## Usage
+
+- Clone the project from [https://github.com/publicclassoverflow/VehicleDemo-SpringBoot.git](https://github.com/publicclassoverflow/VehicleDemo-SpringBoot.git)
+- Run src/main/java/com.coollime.vehicle/VehicleDemoApplication.java
+- Play with endpoint at `http://localhost:8080/vehicles`
+
 ## Requirements
 
 - Implement a RESTful web service that performs CRUD operations (Create, Read, Update, and Delete) for a
@@ -142,4 +148,3 @@ Your implementation will be evaluated on the following criteria:
             .expectHeader().valueEquals("Content-Type", "application/json")
             .expectBody().isEmpty();
         ```
-
