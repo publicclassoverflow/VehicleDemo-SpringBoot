@@ -4,6 +4,8 @@
 
 - Clone the project from [https://github.com/publicclassoverflow/VehicleDemo-SpringBoot.git](https://github.com/publicclassoverflow/VehicleDemo-SpringBoot.git)
 - Run src/main/java/com.coollime.vehicle/VehicleDemoApplication.java
+- In case a Maven build is needed, do
+  - `mvn package` or `mvn clean install`
 - Play with endpoint at `http://localhost:8080/vehicles`
 - Alternatively, the service has been deployed to *heroku* at 
   - [https://mysterious-woodland-24939.herokuapp.com/vehicles](https://mysterious-woodland-24939.herokuapp.com/vehicles)
